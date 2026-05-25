@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kitchen Equipped | Équipement de cuisine commerciale</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#6c797c",
+                        "on-tertiary-container": "#3c4043",
+                        "secondary": "#5f5e5e",
+                        "secondary-container": "#e4e2e1",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#e4e2e1",
+                        "surface-tint": "#006876",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-surface-variant": "#3c494c",
+                        "inverse-surface": "#313030",
+                        "on-surface": "#1c1b1b",
+                        "surface": "#fcf9f8",
+                        "tertiary-fixed-dim": "#c4c7ca",
+                        "on-secondary-container": "#656464",
+                        "outline-variant": "#bbc9cc",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary": "#5c5f62",
+                        "background": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#44d8f1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001f25",
+                        "quote-cyan": "#00BCD4",
+                        "charcoal-text": "#333333",
+                        "tertiary-fixed": "#e0e2e6",
+                        "primary-container": "#00bcd4",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-container": "#a9abaf",
+                        "on-tertiary-fixed-variant": "#44474a",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-fixed": "#191c1f",
+                        "on-background": "#1c1b1b",
+                        "surface-container": "#f0edec",
+                        "on-primary-container": "#004650",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#44d8f1",
+                        "on-primary-fixed-variant": "#004e59",
+                        "steel-gray": "#9CA3AF",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#ebe7e7",
+                        "surface-variant": "#e5e2e1",
+                        "on-primary": "#ffffff",
+                        "primary": "#006876",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "primary-fixed": "#a1efff",
+                        "surface-ice": "#F9FAFB",
+                        "surface-container-highest": "#e5e2e1"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "section-gap": "80px",
+                        "base": "8px",
+                        "element-gap": "24px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "button": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "button": ["14px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "600" }]
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                        'marquee2': 'marquee2 25s linear infinite',
+                        'blob': "blob 7s infinite",
+                        'gradient': 'gradient 8s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        marquee2: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0%)' },
+                        },
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        },
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fcf9f8; color: #1c1b1b; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .search-panel {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, opacity 0.25s ease;
+        }
+        .search-panel.active {
+            max-height: 120px;
+            opacity: 1;
+        }
+        .scroll-progress {
+            height: 2px;
+            background: #00BCD4;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+        .grain-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 10;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        .hero-video-scale {
+            animation: heroVideoZoom 14s ease-in-out infinite alternate;
+            transform-origin: center;
+        }
+        .hero-seq {
+            opacity: 0;
+            animation:
+                heroEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+                heroFadePulse 6.2s ease-in-out infinite;
+        }
+        .hero-seq-1 { animation-delay: 0.1s, 3.1s; }
+        .hero-seq-2 { animation-delay: 0.3s, 3.3s; }
+        .hero-seq-3 { animation-delay: 0.5s, 3.5s; }
+        .hero-seq-4 { animation-delay: 0.7s, 3.7s; }
+
+        @keyframes heroEnter {
+            0% { opacity: 0; transform: translateY(24px) scale(0.985); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes heroFadePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.62; }
+        }
+        @keyframes heroVideoZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.06); }
+        }
+
+        .category-marquee {
+            position: relative;
+            overflow: hidden;
+        }
+        .category-track {
+            display: flex;
+            gap: 1.5rem;
+            width: max-content;
+            animation: categoryScroll 36s linear infinite;
+            will-change: transform;
+        }
+        @keyframes categoryScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 0.75rem)); }
+        }
+
+        .shared-marquee {
+            position: relative;
+            overflow: hidden;
+        }
+        .shared-track {
+            display: flex;
+            gap: 1rem;
+            width: max-content;
+            animation: sharedScroll 34s linear infinite;
+            will-change: transform;
+        }
+        @keyframes sharedScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 0.5rem)); }
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            z-index: 70;
+        }
+        .mobile-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: min(88vw, 360px);
+            background: #ffffff;
+            box-shadow: -18px 0 42px rgba(0, 0, 0, 0.18);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 80;
+            padding: 1.5rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .mobile-drawer.open {
+            transform: translateX(0);
+        }
+        .drawer-link {
+            display: block;
+            padding: 0.75rem;
+            border: 1px solid rgba(108, 121, 124, 0.25);
+            border-radius: 0.35rem;
+            font-size: 12px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .image-soft-zoom {
+            transition: transform 0.8s ease;
+        }
+        .group:hover .image-soft-zoom {
+            transform: scale(1.08);
+        }
+
+        .bento-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(51, 51, 51, 0.08);
+        }
+        
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden relative pb-20 md:pb-0">
+<!-- Scroll Progress Bar -->
+<div class="fixed top-0 left-0 w-full z-[60]">
+<div class="scroll-progress" id="progressBar"></div>
+</div>
+<!-- TopNavBar Shared Component -->
+<nav class="fixed top-0 w-full z-50 transition-all duration-300 glass-nav" id="mainNav">
+<div class="flex justify-between items-center h-20 px-4 md:px-8 max-w-container-max mx-auto transition-all duration-300" id="mainNavInner">
+<!-- Brand -->
+<a class="inline-flex items-center" href="code-fr.html">
+<img alt="Kitchen Equipped" class="h-11 w-auto object-contain" src="assets/146780033_3969710216381253_8717526788197786690_n_860x263_dbf4d982fd.png"/>
+</a>
+<!-- Links (Desktop) -->
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="#categories">Catégories</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-on-surface transition-colors" href="#brands">Marques</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-on-surface transition-colors" href="#financing">Financement/Location</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-on-surface transition-colors" href="#contact">Contactez-nous</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-3 md:gap-4">
+<button class="text-on-surface hover:text-primary transition-colors" id="searchToggle" type="button">
+<span class="material-symbols-outlined">search</span>
+</button>
+<a class="font-label-caps text-label-caps text-secondary hover:text-on-surface transition-colors hidden md:inline" href="index.html">EN</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-on-surface transition-colors hidden md:inline" href="code-fr.html">FR</a>
+<button class="md:hidden text-on-surface hover:text-primary transition-colors" id="mobileMenuToggle" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a class="hidden md:flex bg-quote-cyan text-white px-6 py-3 font-button text-button rounded hover:bg-surface-tint transition-colors shadow-sm" href="#quote">
+                    DEMANDER UN DEVIS
+                </a>
+</div>
+</div>
+<div class="search-panel border-t border-outline/10 bg-surface-container-lowest" id="searchPanel">
+<div class="max-w-container-max mx-auto px-4 md:px-8 py-4">
+<form action="#" class="flex gap-3" method="get">
+<input class="w-full border border-outline/20 rounded px-4 py-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all" name="q" placeholder="Rechercher des produits, des marques, des catégories..." type="search"/>
+<button class="bg-on-surface text-surface px-6 py-3 rounded font-button text-button hover:bg-quote-cyan transition-colors" type="submit">Rechercher</button>
+</form>
+</div>
+</div>
+</nav>
+<div class="mobile-overlay" id="mobileMenuOverlay"></div>
+<aside aria-hidden="true" class="mobile-drawer" id="mobileMenuDrawer">
+<div class="flex items-center justify-between mb-6">
+<div class="font-label-caps text-label-caps text-on-surface-variant">Menu</div>
+<button class="text-on-surface hover:text-primary transition-colors" id="mobileMenuClose" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-3">
+<a class="drawer-link" href="#categories">Catégories</a>
+<a class="drawer-link" href="#brands">Marques</a>
+<a class="drawer-link" href="#technical">Produits vedettes</a>
+<a class="drawer-link" href="#financing">Financement/Location</a>
+<a class="drawer-link" href="#contact">Contact</a>
+<a class="drawer-link bg-quote-cyan text-white border-quote-cyan" href="#quote">Demander un devis</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline/20">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-3">Langue</div>
+<div class="flex gap-3">
+<a class="drawer-link text-center flex-1" href="index.html">EN</a>
+<a class="drawer-link text-center flex-1" href="code-fr.html">FR</a>
+</div>
+</div>
+</aside>
+<!-- Floating Quote Pill -->
+<div class="fixed right-6 bottom-6 z-40 hidden md:block">
+<a class="flex items-center gap-3 bg-surface-container-lowest border border-outline-variant rounded-full py-3 px-5 shadow-[0_12px_32px_rgba(51,51,51,0.08)] hover:border-quote-cyan transition-all group" href="#quote">
+<span class="material-symbols-outlined text-quote-cyan">description</span>
+<span class="font-label-caps text-label-caps text-on-surface group-hover:text-quote-cyan transition-colors">DEVIS</span>
+</a>
+</div>
+<!-- Mobile Sticky CTA -->
+<div class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-surface-container-lowest/95 backdrop-blur-md border-t border-outline/20 p-3">
+<div class="grid grid-cols-2 gap-3 max-w-xl mx-auto">
+<a class="bg-quote-cyan text-white text-center px-4 py-3 font-button text-button rounded" href="#quote">Demander un devis</a>
+<a class="border border-outline text-on-surface text-center px-4 py-3 font-button text-button rounded" href="tel:514-733-3833">Appeler</a>
+</div>
+</div>
+<!-- Hero Section -->
+<header class="relative w-full h-screen min-h-[680px] md:min-h-[800px] flex items-center justify-center bg-inverse-surface overflow-hidden">
+<div class="absolute inset-0 z-0">
+<video autoplay="" class="w-full h-full object-cover opacity-60 hero-video-scale" loop="" muted="" playsinline="">
+<source src="assets/9ad33cdc0bd24c18b937d5f7c352fe0e.HD-1080p-3.3Mbps-39223358_168060a022.mp4" type="video/mp4"/>
+</video>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-transparent to-inverse-surface/50"></div>
+<div class="grain-overlay"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+<div class="inline-block mb-6 px-4 py-1 border border-outline/30 rounded-full backdrop-blur-md bg-surface/10 hero-seq hero-seq-1">
+<span class="font-label-caps text-label-caps text-surface uppercase tracking-widest">Précision professionnelle</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-surface mb-8 drop-shadow-lg hero-seq hero-seq-2">
+                Équipement de cuisine commerciale pour professionnels exigeants
+            </h1>
+<p class="font-body-lg text-body-lg text-tertiary-fixed-dim mb-10 max-w-2xl mx-auto hero-seq hero-seq-3">
+                Conçu pour les environnements exigeants. Des équipements précis pour une cuisine performante. Concevez votre cuisine en toute confiance.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center hero-seq hero-seq-4">
+<a class="bg-quote-cyan text-white px-8 py-4 font-button text-button rounded hover:bg-surface-tint transition-all scale-95 active:scale-90" href="#categories">
+                    EXPLORER LE CATALOGUE
+                </a>
+<a class="bg-transparent border border-surface/30 text-surface px-8 py-4 font-button text-button rounded hover:bg-surface/10 transition-all backdrop-blur-sm" href="#technical">
+                    VOIR LES SPÉCIFICATIONS
+                </a>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+<span class="font-label-caps text-label-caps text-surface/50 mb-2">DÉFILER</span>
+<span class="material-symbols-outlined text-surface/50">arrow_downward</span>
+</div>
+</header>
+<!-- Category Marquee Section -->
+<section class="py-section-gap bg-surface border-b border-tertiary/20 overflow-hidden relative" id="categories">
+<div class="max-w-container-max mx-auto px-8 mb-12">
+<h2 class="font-headline-md text-headline-md text-on-surface">Catégories</h2>
+</div>
+<div class="category-marquee px-6">
+<div class="category-track">
+<!-- Item 1 -->
+<div class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Équipement de restauration" class="w-full h-full object-cover image-soft-zoom" data-alt="Équipement de restauration" src="assets/restaurant_equipment_bea94f2b-1e2d-4a39-add5-950d3e64cf41_ceead782b7.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-surface mb-1">Équipement de restauration</h3>
+<span class="font-label-caps text-label-caps text-quote-cyan flex items-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            VOIR LA CATÉGORIE <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Réfrigération" class="w-full h-full object-cover image-soft-zoom" data-alt="Commercial Réfrigération" src="assets/commercial_refrigeration_3c57ce7d9a.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-surface mb-1">Réfrigération</h3>
+<span class="font-label-caps text-label-caps text-quote-cyan flex items-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            VOIR LA CATÉGORIE <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Fournitures de cuisine" class="w-full h-full object-cover image-soft-zoom" data-alt="Fournitures de cuisine" src="assets/kitchen-supplies_c220a4eb8b.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-surface mb-1">Fournitures de cuisine</h3>
+<span class="font-label-caps text-label-caps text-quote-cyan flex items-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            VOIR LA CATÉGORIE <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Batterie de cuisine" class="w-full h-full object-cover image-soft-zoom" data-alt="Batterie de cuisine" src="assets/cookware_7f579b3f65.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-surface mb-1">Batterie de cuisine</h3>
+<span class="font-label-caps text-label-caps text-quote-cyan flex items-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            VOIR LA CATÉGORIE <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Appareils" class="w-full h-full object-cover image-soft-zoom" data-alt="Kitchen Appareils" src="assets/kitchen-appliances-2_2867c53595.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-surface mb-1">Appareils</h3>
+<span class="font-label-caps text-label-caps text-quote-cyan flex items-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            VOIR LA CATÉGORIE <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Vaisselle" class="w-full h-full object-cover image-soft-zoom" data-alt="Vaisselle" src="assets/dinnerware_9d3ca8ca-9f82-4bfe-9f30-1d8d90017501_b8510be5ff.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-surface mb-1">Vaisselle</h3>
+<span class="font-label-caps text-label-caps text-quote-cyan flex items-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            VOIR LA CATÉGORIE <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Item 7 -->
+<div class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Tables de travail" class="w-full h-full object-cover image-soft-zoom" data-alt="Tables de travail" src="assets/work-tables_222d96bc-1c97-42c9-b1d8-7e8cfd986373_266522edc2.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-surface mb-1">Tables de travail</h3>
+<span class="font-label-caps text-label-caps text-quote-cyan flex items-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            VOIR LA CATÉGORIE <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Duplicate set for seamless loop -->
+<div aria-hidden="true" class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Équipement de restauration" class="w-full h-full object-cover image-soft-zoom" src="assets/restaurant_equipment_bea94f2b-1e2d-4a39-add5-950d3e64cf41_ceead782b7.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6"><h3 class="font-headline-md text-headline-md text-surface mb-1">Équipement de restauration</h3></div>
+</div>
+<div aria-hidden="true" class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Réfrigération" class="w-full h-full object-cover image-soft-zoom" src="assets/commercial_refrigeration_3c57ce7d9a.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6"><h3 class="font-headline-md text-headline-md text-surface mb-1">Réfrigération</h3></div>
+</div>
+<div aria-hidden="true" class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Fournitures de cuisine" class="w-full h-full object-cover image-soft-zoom" src="assets/kitchen-supplies_c220a4eb8b.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6"><h3 class="font-headline-md text-headline-md text-surface mb-1">Fournitures de cuisine</h3></div>
+</div>
+<div aria-hidden="true" class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Batterie de cuisine" class="w-full h-full object-cover image-soft-zoom" src="assets/cookware_7f579b3f65.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6"><h3 class="font-headline-md text-headline-md text-surface mb-1">Batterie de cuisine</h3></div>
+</div>
+<div aria-hidden="true" class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Appareils" class="w-full h-full object-cover image-soft-zoom" src="assets/kitchen-appliances-2_2867c53595.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6"><h3 class="font-headline-md text-headline-md text-surface mb-1">Appareils</h3></div>
+</div>
+<div aria-hidden="true" class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Vaisselle" class="w-full h-full object-cover image-soft-zoom" src="assets/dinnerware_9d3ca8ca-9f82-4bfe-9f30-1d8d90017501_b8510be5ff.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6"><h3 class="font-headline-md text-headline-md text-surface mb-1">Vaisselle</h3></div>
+</div>
+<div aria-hidden="true" class="relative w-72 h-80 flex-shrink-0 group cursor-pointer overflow-hidden rounded-lg" onclick="window.location.hash='categories'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.hash='categories';}" role="link" tabindex="0">
+<img alt="Tables de travail" class="w-full h-full object-cover image-soft-zoom" src="assets/work-tables_222d96bc-1c97-42c9-b1d8-7e8cfd986373_266522edc2.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6"><h3 class="font-headline-md text-headline-md text-surface mb-1">Tables de travail</h3></div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION A — Trust Bar -->
+<section class="py-8 bg-surface-container-lowest border-b border-outline/10 reveal">
+<div class="max-w-container-max mx-auto px-8">
+<div class="flex flex-wrap justify-between items-center gap-6">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-quote-cyan text-3xl">verified</span>
+<span class="font-body-md font-medium">Plus de 30 ans d'expérience</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-quote-cyan text-3xl">public</span>
+<span class="font-body-md font-medium">Service au Canada et aux États-Unis</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-quote-cyan text-3xl">local_dining</span>
+<span class="font-body-md font-medium">Équipement commercial et résidentiel</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-quote-cyan text-3xl">payments</span>
+<span class="font-body-md font-medium">Financement disponible</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION B — Quote Conversion Block -->
+<section class="py-16 reveal" id="quote">
+<div class="max-w-container-max mx-auto px-8">
+<div class="bg-gradient-to-r from-surface-tint/10 via-quote-cyan/10 to-surface-tint/10 animate-gradient rounded-2xl p-10 md:p-16 border border-quote-cyan/20 shadow-sm relative overflow-hidden">
+<div class="relative z-10 grid md:grid-cols-2 gap-10 items-center">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-4">Besoin d'un prix pour plusieurs articles?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Obtenez un devis personnalisé selon vos besoins.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-quote-cyan">check_circle</span> Tarification en volume
+                                </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-quote-cyan">check_circle</span> Adapté à votre budget
+                                </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-quote-cyan">check_circle</span> Support expert
+                                </li>
+</ul>
+<div class="flex flex-wrap gap-4">
+<a class="bg-quote-cyan text-white px-8 py-4 font-button text-button rounded hover:bg-surface-tint transition-all" href="#quote">Demander un devis</a>
+<a class="border border-outline text-on-surface px-8 py-4 font-button text-button rounded hover:bg-surface-container transition-all flex items-center gap-2" href="tel:514-733-3833">
+<span class="material-symbols-outlined">call</span> Appelez le 514-733-3833
+                                </a>
+</div>
+</div>
+<div class="hidden md:block">
+<img alt="Planification de devis cuisine commerciale" class="w-full h-auto rounded-xl shadow-lg object-cover transition-transform duration-700 hover:scale-[1.02]" src="assets/marraforni_750x500_fc89f6cf4e.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION C — Smart Quote Assistant -->
+<section class="py-16 bg-surface-container-low reveal">
+<div class="max-w-container-max mx-auto px-8 text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Créez votre devis plus rapidement</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">Utilisez notre assistant IA pour guider vos choix, recueillir les détails du projet et accélérer la préparation d'un prix précis.</p>
+<div class="bg-surface-container-lowest border border-outline/10 rounded-2xl p-8 max-w-4xl mx-auto shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,188,212,0.1)] transition-all duration-300 group">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-left">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Type de projet</label>
+<select class="w-full bg-surface-container border border-outline/20 rounded p-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all">
+<option>Restaurant</option>
+<option>Café</option>
+<option>Hôtel</option>
+<option>Institutionnel</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Budget</label>
+<select class="w-full bg-surface-container border border-outline/20 rounded p-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all">
+<option>Moins de 10 k$</option>
+<option>10 k$ - 50 k$</option>
+<option>50 k$+</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Catégories</label>
+<input class="w-full bg-surface-container border border-outline/20 rounded p-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all" placeholder="e.g. Réfrigération, Ovens" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Échéancier</label>
+<select class="w-full bg-surface-container border border-outline/20 rounded p-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all">
+<option>Immédiat</option>
+<option>1-3 mois</option>
+<option>3+ mois</option>
+</select>
+</div>
+</div>
+<button class="bg-on-surface text-surface px-8 py-4 font-button text-button rounded w-full md:w-auto hover:bg-quote-cyan transition-colors shadow-md group-hover:shadow-quote-cyan/20">
+                    Démarrer le devis intelligent
+                </button>
+</div>
+</div>
+</section>
+<!-- SECTION D — Produits vedettes -->
+<section class="py-16 reveal" id="technical">
+<div class="max-w-container-max mx-auto px-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">Produits vedettes</h2>
+<div class="grid grid-cols-2 gap-3 md:gap-8">
+<!-- Product 1 -->
+<div class="bg-surface-container-lowest border border-outline/10 rounded-2xl overflow-hidden shadow-sm group">
+<div class="h-32 sm:h-40 md:h-64 overflow-hidden relative bg-surface-container">
+<img alt="Axis AX-513 Convection Oven" class="w-full h-full object-cover image-soft-zoom" src="assets/AX-513_900x600_c39ed6117d.jpg"/>
+</div>
+<div class="p-3 sm:p-4 md:p-8">
+<h3 class="font-headline-md text-[14px] leading-tight md:text-headline-md text-on-surface mb-1 md:mb-2">Axis AX-513 Convection Oven</h3>
+<p class="font-body-md text-[11px] leading-snug md:text-body-md text-on-surface-variant mb-2 md:mb-6">Performance de convection commerciale compacte avec construction inox durable pour un service intensif.</p>
+<a class="inline-flex items-center gap-2 font-button text-xs md:text-button text-quote-cyan hover:text-surface-tint transition-colors" href="#technical">
+                            Magasiner <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="bg-surface-container-lowest border border-outline/10 rounded-2xl overflow-hidden shadow-sm group">
+<div class="h-32 sm:h-40 md:h-64 overflow-hidden relative bg-surface-container">
+<img alt="Marra Forni Neapolitan Pizza Oven" class="w-full h-full object-cover image-soft-zoom" src="assets/marraforni_750x500_fc89f6cf4e.jpg"/>
+</div>
+<div class="p-3 sm:p-4 md:p-8">
+<h3 class="font-headline-md text-[14px] leading-tight md:text-headline-md text-on-surface mb-1 md:mb-2">Marra Forni Pizza Oven</h3>
+<p class="font-body-md text-[11px] leading-snug md:text-body-md text-on-surface-variant mb-2 md:mb-6">Four artisanal au bois ou au gaz conçu pour une production pizzeria haut de gamme et un fort impact visuel.</p>
+<a class="inline-flex items-center gap-2 font-button text-xs md:text-button text-quote-cyan hover:text-surface-tint transition-colors" href="#technical">
+                            Magasiner <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION E — Brand Logos Marquee -->
+<section class="py-12 bg-surface-container-low border-y border-outline/10 overflow-hidden reveal" id="brands">
+<div class="max-w-container-max mx-auto px-8 mb-6 text-center">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Marques de confiance</h3>
+</div>
+<div class="shared-marquee px-6">
+<div class="shared-track items-center">
+<img alt="La Marzocco" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" src="assets/image-removebg-preview_-_2024-11-13T154056.756_160x89_181469d754.png"/>
+<img alt="Sanelli" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" src="assets/image-removebg-preview_-_2024-11-12T144425.544_160x105_306eea572d.png"/>
+<img alt="Atosa" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" src="assets/image-removebg-preview_-_2024-11-06T114002.314_160x49_e4ceef9a7c.png"/>
+<img alt="Hazaki" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" src="assets/image-removebg-preview_-_2024-10-31T122644.254_160x65_0986aef066.png"/>
+<img alt="New Air" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" src="assets/image-removebg-preview_-_2024-10-29T121012.072_160x33_69b4720345.png"/>
+<img alt="Inferno" class="h-12 object-contain opacity-70 hover:opacity-100 transition-opacity" src="assets/inferno_Logo-removebg-preview_160x55_5dc07b2f3e.png"/>
+<img alt="La Marzocco" aria-hidden="true" class="h-12 object-contain opacity-70" src="assets/image-removebg-preview_-_2024-11-13T154056.756_160x89_181469d754.png"/>
+<img alt="Sanelli" aria-hidden="true" class="h-12 object-contain opacity-70" src="assets/image-removebg-preview_-_2024-11-12T144425.544_160x105_306eea572d.png"/>
+<img alt="Atosa" aria-hidden="true" class="h-12 object-contain opacity-70" src="assets/image-removebg-preview_-_2024-11-06T114002.314_160x49_e4ceef9a7c.png"/>
+<img alt="Hazaki" aria-hidden="true" class="h-12 object-contain opacity-70" src="assets/image-removebg-preview_-_2024-10-31T122644.254_160x65_0986aef066.png"/>
+<img alt="New Air" aria-hidden="true" class="h-12 object-contain opacity-70" src="assets/image-removebg-preview_-_2024-10-29T121012.072_160x33_69b4720345.png"/>
+<img alt="Inferno" aria-hidden="true" class="h-12 object-contain opacity-70" src="assets/inferno_Logo-removebg-preview_160x55_5dc07b2f3e.png"/>
+</div>
+</div>
+</section>
+<!-- SECTION F — Testimonials -->
+<section class="py-16 reveal">
+<div class="max-w-container-max mx-auto px-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12 text-center">Ce que disent nos clients</h2>
+<div class="shared-marquee">
+<div class="shared-track">
+<div class="w-[18rem] md:w-[22rem] bg-surface-container-lowest border border-outline/10 p-6 rounded-2xl shadow-sm">
+<div class="flex gap-1 mb-4 text-quote-cyan">
+<span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic">"My daughter and I were just exploring after a meeting and found this place. The owner went above and beyond. We loved the hospitality."</p>
+<div class="font-label-caps text-label-caps text-on-surface">THE DIAMOND WALK</div>
+</div>
+<div class="w-[18rem] md:w-[22rem] bg-surface-container-lowest border border-outline/10 p-6 rounded-2xl shadow-sm">
+<div class="flex gap-1 mb-4 text-quote-cyan">
+<span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic">"I have worked with Kitchen Equipped for several years now, love the team, the experience, and the variety they have to offer!"</p>
+<div class="font-label-caps text-label-caps text-on-surface">CHAD TAYLOR</div>
+</div>
+<div class="w-[18rem] md:w-[22rem] bg-surface-container-lowest border border-outline/10 p-6 rounded-2xl shadow-sm">
+<div class="flex gap-1 mb-4 text-quote-cyan">
+<span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic">"Wonderful company to deal with. Courteous, professional, and expedient. Highly recommend this company."</p>
+<div class="font-label-caps text-label-caps text-on-surface">SJ K</div>
+</div>
+<div aria-hidden="true" class="w-[18rem] md:w-[22rem] bg-surface-container-lowest border border-outline/10 p-6 rounded-2xl shadow-sm">
+<div class="flex gap-1 mb-4 text-quote-cyan">
+<span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic">"My daughter and I were just exploring after a meeting and found this place. The owner went above and beyond. We loved the hospitality."</p>
+<div class="font-label-caps text-label-caps text-on-surface">THE DIAMOND WALK</div>
+</div>
+<div aria-hidden="true" class="w-[18rem] md:w-[22rem] bg-surface-container-lowest border border-outline/10 p-6 rounded-2xl shadow-sm">
+<div class="flex gap-1 mb-4 text-quote-cyan">
+<span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic">"I have worked with Kitchen Equipped for several years now, love the team, the experience, and the variety they have to offer!"</p>
+<div class="font-label-caps text-label-caps text-on-surface">CHAD TAYLOR</div>
+</div>
+<div aria-hidden="true" class="w-[18rem] md:w-[22rem] bg-surface-container-lowest border border-outline/10 p-6 rounded-2xl shadow-sm">
+<div class="flex gap-1 mb-4 text-quote-cyan">
+<span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span><span class="material-symbols-outlined text-lg">star</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 italic">"Wonderful company to deal with. Courteous, professional, and expedient. Highly recommend this company."</p>
+<div class="font-label-caps text-label-caps text-on-surface">SJ K</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION G — Financement + Lease -->
+<section class="py-16 bg-surface-container-low reveal" id="financing">
+<div class="max-w-container-max mx-auto px-8">
+<div class="grid grid-cols-2 gap-3 md:gap-8 relative items-stretch">
+<div aria-hidden="true" class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-px bg-outline/30 rotate-[20deg]"></div>
+<div class="bg-surface-container-lowest border border-outline/10 p-4 md:p-10 rounded-2xl shadow-sm z-10">
+<h3 class="font-headline-md text-[15px] leading-tight md:text-headline-md text-on-surface mb-2 md:mb-4">Options de financement</h3>
+<p class="font-body-md text-[11px] leading-snug md:text-body-md text-on-surface-variant mb-4 md:mb-8">Plans de financement flexibles pour obtenir l'équipement nécessaire tout en gérant votre trésorerie.</p>
+<a class="inline-flex items-center justify-center bg-on-surface text-surface px-6 py-3 font-button text-button rounded hover:bg-quote-cyan transition-colors" href="#financing">En savoir plus</a>
+</div>
+<div class="bg-surface-container-lowest border border-outline/10 p-4 md:p-10 rounded-2xl shadow-sm z-10">
+<h3 class="font-headline-md text-[15px] leading-tight md:text-headline-md text-on-surface mb-2 md:mb-4">Calculateur de location</h3>
+<p class="font-body-md text-[11px] leading-snug md:text-body-md text-on-surface-variant mb-4 md:mb-8">Estimez vos paiements mensuels avec notre calculateur de location simple et rapide.</p>
+<a class="inline-flex items-center justify-center border border-outline text-on-surface px-6 py-3 font-button text-button rounded hover:bg-surface-container transition-colors" href="#financing">Calculer</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION H — FAQ Accordion -->
+<section class="py-16 reveal" id="faq">
+<div class="max-w-3xl mx-auto px-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-10 text-center">Foire aux questions</h2>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<details class="group bg-surface-container-lowest border border-outline/20 rounded-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-body-md font-semibold text-on-surface">
+<span>Comment obtenir un devis?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md">
+                        Vous pouvez obtenir un devis via notre assistant intelligent, le formulaire de demande ou en nous appelant au 514-733-3833.
+                    </div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group bg-surface-container-lowest border border-outline/20 rounded-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-body-md font-semibold text-on-surface">
+<span>Offrez-vous la livraison aux États-Unis?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md">
+                        Oui, nous desservons le Canada et les États-Unis. Les frais de livraison sont calculés selon votre emplacement et la taille de votre commande.
+                    </div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group bg-surface-container-lowest border border-outline/20 rounded-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-body-md font-semibold text-on-surface">
+<span>Vendez-vous aussi pour la cuisine résidentielle?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md">
+                        Nous sommes spécialisés en équipement commercial, mais nous proposons aussi des produits professionnels pour la maison, comme la La Marzocco Linea Mini.
+                    </div>
+</details>
+<!-- FAQ Item 4 -->
+<details class="group bg-surface-container-lowest border border-outline/20 rounded-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-body-md font-semibold text-on-surface">
+<span>Quelles options de financement sont disponibles?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md">
+                        We offer various financing and leasing plans tailored to your business needs. Please check our Options de financement page for more details.
+                    </div>
+</details>
+<!-- FAQ Item 5 -->
+<details class="group bg-surface-container-lowest border border-outline/20 rounded-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-body-md font-semibold text-on-surface">
+<span>Vos produits sont-ils couverts par une garantie?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md">
+                        Oui, la plupart de nos produits sont couverts par la garantie du fabricant. Les détails varient selon la marque et la catégorie.
+                    </div>
+</details>
+<!-- FAQ Item 6 -->
+<details class="group bg-surface-container-lowest border border-outline/20 rounded-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer font-body-md font-semibold text-on-surface">
+<span>Puis-je visiter votre salle d'exposition?</span>
+<span class="material-symbols-outlined transition duration-300 group-open:-rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant font-body-md">
+                        Oui, notre salle d'exposition est située sur la rue Ferrier. Contactez-nous pour planifier une visite.
+                    </div>
+</details>
+</div>
+</div>
+</section>
+<!-- SECTION I — Final Conversion Band -->
+<section class="bg-quote-cyan py-16 reveal">
+<div class="max-w-container-max mx-auto px-8 text-center">
+<h2 class="font-headline-lg text-headline-lg text-white mb-8">Prêt à chiffrer votre projet de cuisine?</h2>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="bg-white text-quote-cyan px-8 py-4 font-button text-button rounded hover:bg-surface-container transition-all" href="#quote">Demander un devis</a>
+<a class="border border-white/50 text-white px-8 py-4 font-button text-button rounded hover:bg-white/10 transition-all" href="#contact">Contactez-nous</a>
+</div>
+</div>
+</section>
+<!-- SECTION J — Footer -->
+<footer id="contact" class="bg-inverse-surface text-surface py-16 border-t border-outline/20">
+<div class="max-w-container-max mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div>
+<div class="font-headline-md text-headline-md mb-6">KITCHEN EQUIPPED</div>
+<p class="font-body-sm text-tertiary-fixed-dim mb-4">Précision professionnelle. Engineered for extreme environments. Precision instruments for culinary mastery.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-surface/70 mb-6">Contact</h4>
+<ul class="space-y-4 font-body-sm text-tertiary-fixed-dim">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-lg text-quote-cyan">call</span> 514-733-3833</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-lg text-quote-cyan">mail</span> info@kitchenequipped.com</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-lg text-quote-cyan">location_on</span> 5629 Ferrier St, Mount Royal, Quebec H4P 1N1</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-surface/70 mb-6">Liens rapides</h4>
+<ul class="space-y-3 font-body-sm text-tertiary-fixed-dim">
+<li><a class="hover:text-quote-cyan transition-colors" href="#categories">Catalogue équipement</a></li>
+<li><a class="hover:text-quote-cyan transition-colors" href="#quote">Demander un devis</a></li>
+<li><a class="hover:text-quote-cyan transition-colors" href="#financing">Financement</a></li>
+<li><a class="hover:text-quote-cyan transition-colors" href="#contact">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-surface/70 mb-6">Suivez-nous</h4>
+<div class="flex gap-4">
+<a class="text-tertiary-fixed-dim hover:text-quote-cyan transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-tertiary-fixed-dim hover:text-quote-cyan transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-tertiary-fixed-dim hover:text-quote-cyan transition-colors" href="#"><span class="material-symbols-outlined">play_circle</span></a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-body-sm text-tertiary-fixed-dim">
+                © 2026 KITCHEN EQUIPPED. PRÉCISION PROFESSIONNELLE.
+            </div>
+<div class="flex gap-6 font-body-sm text-tertiary-fixed-dim">
+<a class="hover:text-surface transition-colors" href="#">Politique de confidentialité</a>
+<a class="hover:text-surface transition-colors" href="#">Conditions d'utilisation</a>
+</div>
+</div>
+</footer>
+<script>
+        // Scroll Progress & Nav Blur
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+
+            const nav = document.getElementById('mainNav');
+            const navInner = document.getElementById('mainNavInner');
+            if (winScroll > 50) {
+                nav.classList.add('glass-nav', 'py-0', 'shadow-sm');
+                if (navInner) {
+                    navInner.classList.remove('h-20');
+                    navInner.classList.add('h-16');
+                }
+            } else {
+                nav.classList.remove('py-0', 'shadow-sm');
+                if (navInner) {
+                    navInner.classList.remove('h-16');
+                    navInner.classList.add('h-20');
+                }
+            }
+        });
+
+        // Search Panel Toggle
+        const searchToggle = document.getElementById('searchToggle');
+        const searchPanel = document.getElementById('searchPanel');
+        if (searchToggle && searchPanel) {
+            searchToggle.addEventListener('click', () => {
+                searchPanel.classList.toggle('active');
+            });
+        }
+
+        // Mobile Drawer Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+        const setMobileMenu = (isOpen) => {
+            if (!mobileMenuDrawer || !mobileMenuOverlay) return;
+            mobileMenuDrawer.classList.toggle('open', isOpen);
+            mobileMenuOverlay.classList.toggle('open', isOpen);
+            document.body.classList.toggle('overflow-hidden', isOpen);
+            mobileMenuDrawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        };
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => setMobileMenu(true));
+        }
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', () => setMobileMenu(false));
+        }
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', () => setMobileMenu(false));
+        }
+
+        document.querySelectorAll('#mobileMenuDrawer a').forEach((link) => {
+            link.addEventListener('click', () => setMobileMenu(false));
+        });
+
+        // Reveal Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body></html>
