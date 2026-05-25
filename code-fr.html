@@ -298,6 +298,36 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .shop-all-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .shop-all-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+        }
+        .shop-all-pill {
+            border: 1px solid rgba(108, 121, 124, 0.25);
+            background: #ffffff;
+            border-radius: 999px;
+            padding: 0.35rem 0.75rem;
+            font-size: 12px;
+            line-height: 1;
+            letter-spacing: 0.04em;
+        }
+        .shop-all-advanced summary {
+            list-style: none;
+        }
+        .shop-all-advanced summary::-webkit-details-marker {
+            display: none;
+        }
+        .shop-all-count.flash {
+            animation: shopAllCountFlash 0.32s ease;
+        }
+        @keyframes shopAllCountFlash {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.04); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body class="antialiased overflow-x-hidden relative pb-20 md:pb-0">
@@ -536,6 +566,73 @@
 <div class="absolute bottom-6 left-6 right-6"><h3 class="font-headline-md text-headline-md text-surface mb-1">Tables de travail</h3></div>
 </div>
 </div>
+</div>
+</section>
+<!-- SECTION A0 — Architecture des filtres Shop All -->
+<section class="py-16 bg-surface-container-lowest border-b border-outline/10 reveal" id="shop-all">
+<div class="max-w-container-max mx-auto px-8">
+<div class="md:flex md:items-end md:justify-between gap-8 mb-10">
+<div>
+<p class="font-label-caps text-label-caps text-quote-cyan mb-3 uppercase tracking-widest">Correction Prototype</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-3">Shop All, simplifié</h2>
+<p class="font-body-md text-on-surface-variant max-w-3xl">Des filtres orientés intention réduisent la surcharge et aident les acheteurs à trouver plus vite les bons produits. Les facettes techniques restent accessibles, mais masquées par défaut.</p>
+</div>
+<button class="mt-6 md:mt-0 inline-flex items-center gap-2 border border-outline/30 text-on-surface px-5 py-3 rounded font-button text-button hover:bg-surface-container transition-colors" id="shopAllReset" type="button">
+<span class="material-symbols-outlined text-base">refresh</span>
+                    Réinitialiser les filtres
+                </button>
+</div>
+<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7 mb-8">
+<label class="lg:col-span-2">
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Recherche</span>
+<input class="w-full bg-surface-container border border-outline/20 rounded px-4 py-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all" id="shopAllSearch" placeholder="Rechercher par produit ou modèle" type="search"/>
+</label>
+<label>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Catégorie</span>
+<select class="w-full bg-surface-container border border-outline/20 rounded px-4 py-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all" id="shopAllCategory"></select>
+</label>
+<label>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Marque</span>
+<select class="w-full bg-surface-container border border-outline/20 rounded px-4 py-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all" id="shopAllBrand"></select>
+</label>
+<label>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Usage</span>
+<select class="w-full bg-surface-container border border-outline/20 rounded px-4 py-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all" id="shopAllUseCase"></select>
+</label>
+<label>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Prix</span>
+<select class="w-full bg-surface-container border border-outline/20 rounded px-4 py-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all" id="shopAllPrice"></select>
+</label>
+<label>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Disponibilité</span>
+<select class="w-full bg-surface-container border border-outline/20 rounded px-4 py-3 font-body-md text-on-surface focus:border-quote-cyan focus:ring-1 focus:ring-quote-cyan transition-all" id="shopAllAvailability"></select>
+</label>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+<div class="font-body-md text-on-surface-variant">
+<span class="font-semibold text-on-surface shop-all-count" id="shopAllResultCount">0</span> résultats
+                </div>
+<div class="flex gap-2 flex-wrap" id="shopAllPills">
+<span class="shop-all-pill">Catégorie</span>
+<span class="shop-all-pill">Marque</span>
+<span class="shop-all-pill">Usage</span>
+<span class="shop-all-pill">Prix</span>
+<span class="shop-all-pill">Disponibilité</span>
+</div>
+</div>
+<details class="shop-all-advanced bg-surface-container-low border border-outline/15 rounded-xl p-4 mb-8">
+<summary class="cursor-pointer flex items-center justify-between">
+<span class="font-body-md font-semibold text-on-surface">Facettes techniques avancées (masquées par défaut)</span>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</summary>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4 text-on-surface-variant font-body-sm">
+<label class="inline-flex items-center gap-2"><input checked="" class="accent-quote-cyan" type="checkbox"/> Tension / phase</label>
+<label class="inline-flex items-center gap-2"><input checked="" class="accent-quote-cyan" type="checkbox"/> Matériau / épaisseur</label>
+<label class="inline-flex items-center gap-2"><input checked="" class="accent-quote-cyan" type="checkbox"/> Dimensions exactes</label>
+</div>
+</details>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5" id="shopAllGrid"></div>
+<p class="hidden text-center font-body-md text-on-surface-variant py-8" id="shopAllEmptyState">Aucun produit ne correspond à ces filtres. Essayez d'en retirer un.</p>
 </div>
 </section>
 <!-- SECTION A — Trust Bar -->
@@ -945,6 +1042,232 @@
         document.querySelectorAll('#mobileMenuDrawer a').forEach((link) => {
             link.addEventListener('click', () => setMobileMenu(false));
         });
+
+        // Architecture des filtres Shop All (orientée intention)
+        const shopAllNodes = {
+            search: document.getElementById('shopAllSearch'),
+            category: document.getElementById('shopAllCategory'),
+            brand: document.getElementById('shopAllBrand'),
+            useCase: document.getElementById('shopAllUseCase'),
+            price: document.getElementById('shopAllPrice'),
+            availability: document.getElementById('shopAllAvailability'),
+            reset: document.getElementById('shopAllReset'),
+            grid: document.getElementById('shopAllGrid'),
+            count: document.getElementById('shopAllResultCount'),
+            empty: document.getElementById('shopAllEmptyState')
+        };
+
+        const shopAllProducts = [
+            {
+                name: 'Four à convection Axis AX-513',
+                category: 'Cuisson',
+                brand: 'Axis',
+                useCase: 'Ouverture de restaurant',
+                price: '2 k$ - 5 k$',
+                availability: 'En stock',
+                image: 'assets/AX-513_900x600_c39ed6117d.jpg',
+                blurb: 'Rendement de convection fiable pour une production continue.'
+            },
+            {
+                name: 'Four à pizza Marra Forni',
+                category: 'Cuisson',
+                brand: 'Marra Forni',
+                useCase: 'Pizzeria',
+                price: '5 k$+',
+                availability: 'Expédition rapide',
+                image: 'assets/marraforni_750x500_fc89f6cf4e.jpg',
+                blurb: 'Performance artisanale haut de gamme avec fort impact visuel.'
+            },
+            {
+                name: 'Réfrigérateur commercial vertical',
+                category: 'Réfrigération',
+                brand: 'Kool-It',
+                useCase: 'Hôtel / Traiteur',
+                price: '2 k$ - 5 k$',
+                availability: 'En stock',
+                image: 'assets/commercial_refrigeration_3c57ce7d9a.jpg',
+                blurb: 'Grande capacité de stockage pour stabiliser la production.'
+            },
+            {
+                name: 'Table de préparation inox',
+                category: 'Préparation',
+                brand: 'Thorinox',
+                useCase: 'Ouverture de restaurant',
+                price: 'Moins de 2 k$',
+                availability: 'En stock',
+                image: 'assets/work-tables_222d96bc-1c97-42c9-b1d8-7e8cfd986373_266522edc2.jpg',
+                blurb: 'Poste de travail durable pour les opérations à fort volume.'
+            },
+            {
+                name: 'Ensemble mélangeur comptoir',
+                category: 'Petits équipements',
+                brand: 'Ooni',
+                useCase: 'Boulangerie',
+                price: 'Moins de 2 k$',
+                availability: 'Précommande',
+                image: 'assets/kitchen-appliances-2_2867c53595.jpg',
+                blurb: 'Puissance compacte pour pâtes, mélanges et production sucrée.'
+            },
+            {
+                name: 'Service de vaisselle professionnel',
+                category: 'Petits équipements',
+                brand: 'Arcoroc',
+                useCase: 'Hôtellerie',
+                price: 'Moins de 2 k$',
+                availability: 'Expédition rapide',
+                image: 'assets/dinnerware_9d3ca8ca-9f82-4bfe-9f30-1d8d90017501_b8510be5ff.jpg',
+                blurb: 'Vaisselle prête au service pour une constance en salle.'
+            },
+            {
+                name: 'Trousse d’outils de cuisine',
+                category: 'Petits équipements',
+                brand: 'Sanelli',
+                useCase: 'Ouverture de restaurant',
+                price: 'Moins de 2 k$',
+                availability: 'En stock',
+                image: 'assets/kitchen-supplies_c220a4eb8b.jpg',
+                blurb: 'Ustensiles essentiels choisis pour la vitesse et la sécurité.'
+            },
+            {
+                name: 'Pack d’équipement cuisine complète',
+                category: 'Équipement',
+                brand: 'Omcan',
+                useCase: 'Institutionnel',
+                price: '5 k$+',
+                availability: 'Précommande',
+                image: 'assets/restaurant_equipment_bea94f2b-1e2d-4a39-add5-950d3e64cf41_ceead782b7.jpg',
+                blurb: 'Pack multi-unités pour nouvelles cuisines et rénovations.'
+            }
+        ];
+
+        const shopAllMeta = {
+            category: { label: 'Toutes les catégories' },
+            brand: { label: 'Toutes les marques' },
+            useCase: { label: 'Tous les usages' },
+            price: { label: 'Toutes les gammes de prix' },
+            availability: { label: 'Toute disponibilité' }
+        };
+
+        const normalizeText = (value) =>
+            String(value || '')
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '');
+
+        const escapeHtml = (value) =>
+            String(value)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+
+        const hasShopAll =
+            shopAllNodes.search &&
+            shopAllNodes.category &&
+            shopAllNodes.brand &&
+            shopAllNodes.useCase &&
+            shopAllNodes.price &&
+            shopAllNodes.availability &&
+            shopAllNodes.reset &&
+            shopAllNodes.grid &&
+            shopAllNodes.count &&
+            shopAllNodes.empty;
+
+        if (hasShopAll) {
+            const populateSelect = (node, key) => {
+                const values = [...new Set(shopAllProducts.map((item) => item[key]))];
+                node.innerHTML = [
+                    `<option value="all">${shopAllMeta[key].label}</option>`,
+                    ...values.map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
+                ].join('');
+            };
+
+            populateSelect(shopAllNodes.category, 'category');
+            populateSelect(shopAllNodes.brand, 'brand');
+            populateSelect(shopAllNodes.useCase, 'useCase');
+            populateSelect(shopAllNodes.price, 'price');
+            populateSelect(shopAllNodes.availability, 'availability');
+
+            const availabilityTone = {
+                'En stock': 'text-emerald-700 bg-emerald-50',
+                'Expédition rapide': 'text-cyan-700 bg-cyan-50',
+                'Précommande': 'text-amber-700 bg-amber-50'
+            };
+
+            const renderProducts = () => {
+                const searchTerm = normalizeText(shopAllNodes.search.value.trim());
+
+                const filtered = shopAllProducts.filter((item) => {
+                    if (searchTerm) {
+                        const haystack = normalizeText([
+                            item.name,
+                            item.category,
+                            item.brand,
+                            item.useCase,
+                            item.blurb
+                        ].join(' '));
+                        if (!haystack.includes(searchTerm)) return false;
+                    }
+
+                    if (shopAllNodes.category.value !== 'all' && item.category !== shopAllNodes.category.value) return false;
+                    if (shopAllNodes.brand.value !== 'all' && item.brand !== shopAllNodes.brand.value) return false;
+                    if (shopAllNodes.useCase.value !== 'all' && item.useCase !== shopAllNodes.useCase.value) return false;
+                    if (shopAllNodes.price.value !== 'all' && item.price !== shopAllNodes.price.value) return false;
+                    if (shopAllNodes.availability.value !== 'all' && item.availability !== shopAllNodes.availability.value) return false;
+                    return true;
+                });
+
+                shopAllNodes.count.textContent = String(filtered.length);
+                shopAllNodes.count.classList.remove('flash');
+                void shopAllNodes.count.offsetWidth;
+                shopAllNodes.count.classList.add('flash');
+
+                shopAllNodes.empty.classList.toggle('hidden', filtered.length !== 0);
+
+                shopAllNodes.grid.innerHTML = filtered
+                    .map((item) => {
+                        const tone = availabilityTone[item.availability] || 'text-on-surface-variant bg-surface-container';
+                        return `
+                            <article class="shop-all-card bg-surface-container-low border border-outline/10 rounded-2xl overflow-hidden">
+                                <div class="h-44 overflow-hidden bg-surface-container">
+                                    <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" class="w-full h-full object-cover image-soft-zoom" />
+                                </div>
+                                <div class="p-5">
+                                    <div class="flex items-center justify-between gap-3 mb-3">
+                                        <span class="font-label-caps text-label-caps text-on-surface-variant">${escapeHtml(item.brand)}</span>
+                                        <span class="px-2 py-1 rounded-full text-[11px] font-semibold ${tone}">${escapeHtml(item.availability)}</span>
+                                    </div>
+                                    <h3 class="font-headline-md text-[20px] leading-6 text-on-surface mb-2">${escapeHtml(item.name)}</h3>
+                                    <p class="font-body-sm text-on-surface-variant mb-4">${escapeHtml(item.blurb)}</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="shop-all-pill">${escapeHtml(item.category)}</span>
+                                        <span class="shop-all-pill">${escapeHtml(item.useCase)}</span>
+                                        <span class="shop-all-pill">${escapeHtml(item.price)}</span>
+                                    </div>
+                                </div>
+                            </article>
+                        `;
+                    })
+                    .join('');
+            };
+
+            shopAllNodes.search.addEventListener('input', renderProducts);
+            [shopAllNodes.category, shopAllNodes.brand, shopAllNodes.useCase, shopAllNodes.price, shopAllNodes.availability]
+                .forEach((node) => node.addEventListener('change', renderProducts));
+
+            shopAllNodes.reset.addEventListener('click', () => {
+                shopAllNodes.search.value = '';
+                shopAllNodes.category.value = 'all';
+                shopAllNodes.brand.value = 'all';
+                shopAllNodes.useCase.value = 'all';
+                shopAllNodes.price.value = 'all';
+                shopAllNodes.availability.value = 'all';
+                renderProducts();
+            });
+
+            renderProducts();
+        }
 
         // Reveal Animations
         const observerOptions = {
